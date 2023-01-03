@@ -2040,6 +2040,7 @@ int main(int argc, char *argv[]) {
 #endif /* __OpenBSD__ */
        // if(access(slstatuscmd,F_OK)!=-1)
   system("slstatus &");
+  system("tabby &");
   // if (access(slstatuscmd[0], F_OK) != -1)
   // system(slstatuscmd[0]);
   scan();
