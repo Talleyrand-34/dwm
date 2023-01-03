@@ -1,5 +1,6 @@
 
 /* See LICENSE file for copyright and license details. */
+static const char *slstatuscmd[] = {"slstatus"};
 
 /* appearance */
 static const unsigned int borderpx = 2; /* border pixel size of windows */
@@ -27,8 +28,8 @@ static const char *colors[][3] = {
 
 /* tagging */
 // tag names (upper left)
-static const char *tags[] = {"", "", "", "", "",
-                             "", "", "", "", ""};
+static const char *tags[] = {"", "", "", "", "",
+                             "", "", "", "", ""};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -38,6 +39,8 @@ static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
     {"Gimp", NULL, NULL, 0, 1, -1},
     {"Firefox", NULL, NULL, 1 << 8, 0, -1},
+    {"slstatus", NULL, NULL, 0, True, -1},
+
 };
 
 /* layout(s) */
