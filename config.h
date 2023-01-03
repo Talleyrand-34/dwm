@@ -90,8 +90,10 @@ static const char *downvol[] = {"amixer", "-q",     "set", "Master",
                                 "5%-",    "unmute", NULL};
 static const char *mutevol[] = {"amixer", "-q",     "set",
                                 "Master", "toggle", NULL};
-static const char *brightnessup[] = {"brightnessctl", "set", "+5%", NULL};
-static const char *brightnessdown[] = {"brightnessctl", "set", "-5%", NULL};
+static const char *brightnessup[] = {"brightnessctl", "set", "+5%",
+                                     "intel_backlight", NULL};
+static const char *brightnessdown[] = {"brightnessctl", "set", "5%-",
+                                       "intel_backlight", NULL};
 static const char *browser[] = {"firefox", NULL};
 #include "shiftview.c"
 static char *endx[] = {"/bin/sh", "-c", "endx", "externalpipe", NULL};
@@ -129,8 +131,8 @@ static Key keys[] = {
     {MODKEY, XK_F8, spawn, {.v = upvol}},
     {MODKEY, XK_F7, spawn, {.v = downvol}},
     {MODKEY, XK_F5, spawn, {.v = mutevol}},
-    {MODKEY | ShiftMask, XK_F11, spawn, {.v = brightnessup}},
-    {MODKEY | ShiftMask, XK_F12, spawn, {.v = brightnessdown}},
+    {MODKEY, XK_F11, spawn, {.v = brightnessdown}},
+    {MODKEY, XK_F12, spawn, {.v = brightnessup}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
             TAGKEYS(XK_9, 8){MODKEY | ShiftMask, XK_q, quit, {0}},
